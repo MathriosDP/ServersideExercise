@@ -8,10 +8,9 @@
     <%- include('navbar'); -%>
     <div class="container">
       <div class="row">
-          <% var qntElements = post.length;
-          for(i = qntElements -1; i != qntElements -4; i--) { %>
-            <%- include('post_card', { post: post[i] }); -%>
-          <% }; %>
+          <% post.forEach((post) => { %>
+            <%- include('post_card', { post: post }); -%>
+          <% }); %>
       </div>
     </div>
   </body>
