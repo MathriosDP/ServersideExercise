@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var postsServices = require('../service/postsService');
 var projectServices = require('../service/projectService');
+var opportunitysServices = require('../service/opportunityService');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -40,6 +41,12 @@ router.get('/project/:projectId', function(req, res, next) {
   var project = projects.filter((project) => project.id == projectId)[0];
 
   res.render('project', {title: project.name, project: project});
+})
+
+router.get('/opportunity', function(req, res, next) {
+  var opportunity = opportunitysServices.getOpportunity();
+
+  res.render('opportunity', {title: opportunity.nameOpportunity, opportunity: opportunity});
 })
 
 module.exports = router;
