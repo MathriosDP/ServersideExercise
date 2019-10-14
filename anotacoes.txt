@@ -1,0 +1,2 @@
+1. Criar um arquivo de rotas genérico que direciona para arquivos de rotas
+específicos dentro do app.js

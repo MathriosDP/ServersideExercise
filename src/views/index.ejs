@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <%- include('imports'); -%>
+    <title>Blog</title>
+    <%- include('./common/imports'); -%>
   </head>
   <body>
-    <%- include('navbar'); -%>
+    <%- include('./common/navbar'); -%>
     <div class="container">
       <div class="row">
-          <% var qntElements = post.length;
+          <% var qntElements = posts.length;
           for(i = qntElements -1; i != qntElements -4; i--) { %>
-            <%- include('post_card', { post: post[i] }); -%>
+            <%- include('post_card', { post: posts[i] }); -%>
           <% }; %>
       </div>
     </div>

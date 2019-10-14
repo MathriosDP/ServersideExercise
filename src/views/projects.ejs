@@ -2,14 +2,14 @@
 <html>
   <head>
     <title><%= title %></title>
-    <%- include('imports'); -%>
+    <%- include('./common/imports'); -%>
   </head>
   <body>
-    <%- include('navbar'); -%>
+    <%- include('./common/navbar'); -%>
     <div class="container">
       <div class="row">
-          <% post.forEach((post) => { %>
-            <%- include('post_card', { post: post }); -%>
+          <% project.forEach((project) => { %>
+            <%- include('project_card', { project: project }); -%>
           <% }); %>
       </div>
     </div>

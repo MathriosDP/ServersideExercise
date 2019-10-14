@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <%- include('./common/imports'); -%>
+  </head>
+  <body>
+    <%- include('./common/navbar'); -%>
+    <div class="container">
+      <div class="row">
+          <% post.forEach((post) => { %>
+            <%- include('post_card', { post: post }); -%>
+          <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
