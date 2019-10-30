@@ -4,11 +4,15 @@ var path          = require('path');
 var createError   = require('http-errors');
 var cookieParser  = require('cookie-parser');
 
-var indexRouter         = require('./routes/index');
-var projectRouter       = require('./routes/project');
-var opportunityRouter   = require('./routes/opportunity');
-var testimonialsRouter  = require('./routes/testimonials');
-var adminPostsRouter    = require('./routes/admin/posts');
+var indexRouter             = require('./routes/index');
+var projectRouter           = require('./routes/project');
+var opportunityRouter       = require('./routes/opportunity');
+var testimonialsRouter      = require('./routes/testimonials');
+var ProductsRouter      = require('./routes/products');
+
+var adminPostsRouter        = require('./routes/admin/posts');
+var adminTestimonialsRouter = require('./routes/admin/testimonials');
+var adminProductsRouter     = require('./routes/admin/products');
 
 var app = express();
 
@@ -26,7 +30,10 @@ app.use('/', indexRouter);
 app.use('/projects', projectRouter);
 app.use('/opportunity', opportunityRouter);
 app.use('/testimonials', testimonialsRouter);
+app.use('/products', ProductsRouter);
 app.use('/admin/posts', adminPostsRouter);
+app.use('/admin/testimonials', adminTestimonialsRouter);
+app.use('/admin/products', adminProductsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%- include('../../common/imports'); -%>
+  </head>
+  <body>
+    <%- include('../../common/navbar'); -%>
+    <div class="container">
+        <div class="row">
+            <h1>Administração de posts</h1>
+        </div>
+        <div class="row mb-2">
+            <a href="/admin/testimonials/create" class="btn btn-success">Novo Testimony</a>
+        </div>
+        <div class="row">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">id</th>
+                        <th scope="col">name</th>
+                        <th scope="col">company</th>
+                        <th scope="col">title</th>
+                        <th scope="col">testimony</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% testimonials.forEach((testimonial) => { %>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td><%= testimonial.id %></td>
+                        <td><%= testimonial.name %></td>
+                        <td><%= testimonial.company %></td>
+                        <td><%= testimonial.title %></td>
+                        <td><%= testimonial.testimony %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </body>
+</html>

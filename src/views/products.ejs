@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%- include('./common/imports'); -%>
+  </head>
+  <body>
+    <%- include('./common/navbar'); -%>
+    <div class="container">
+        <div class="row"> 
+            <h1>Produtos</h1>
+        </div>
+        <div class="container">
+          
+              <% products.forEach((product) => { %>
+                <%- include('products_card', { product: product }); -%>
+              <% }); %>
+          
+        </div>
+        
+    </div>
+  </body>
+</html>

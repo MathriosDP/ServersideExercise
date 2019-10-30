@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%- include('../../common/imports'); -%>
+  </head>
+  <body>
+    <%- include('../../common/navbar'); -%>
+    <div class="container">
+        <div class="row">
+            <h1>New Testimonial</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="create" method="POST">
+                    <div class="form-group">
+                        <label for="postTile">Name</label>
+                        <input type="text" class="form-control" id="postTitle" name="name" aria-describedby="emailHelp" placeholder="Enter title">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="postDescription">Company</label>
+                        <input type="text" class="form-control" id="postDescription" name="company" placeholder="Description">
+                    </div>
+                    <div class="form-group">
+                        <label for="postBody">Title</label>
+                        <input type="text" class="form-control" id="postBody" name="title" placeholder="body">
+                        </div>
+                    <div class="form-group">
+                        <label for="postImage">Testimony</label>
+                        <textarea type="text" class="form-control" id="postImage" name="testimony" placeholder="body"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

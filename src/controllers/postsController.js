@@ -1,19 +1,19 @@
-var postsServices = require('../service/postsService');
+var projectServices = require('../service/projectService');
 
 module.exports = {
-    index(req, res, router) {
-        var posts = postsServices.getPosts();
+    index(req, res) {
+        var project = projectServices.getProjects();
 
-        res.render('index', { posts });
+        res.render('projects', { title: 'Projects', project: project});
     },
 
     show(req, res) {
-        var postId = req.params.postId;
+        var projectId = req.params.projectId;
 
-        var posts = postsServices.getPosts();
+        var projects = projectServices.getProjects();
 
-        var post = posts.filter((post) => post.id == postId)[0];
+        var project = projects.filter((project) => project.id == projectId)[0];
 
-        res.render('post', {title: post.title, post });
-    },
+        res.render('project', {title: project.name, project: project});
+    }
 }
